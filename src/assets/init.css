@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.skeleton{
+    @apply bg-gray-100 text-gray-100  w-full h-full rounded-lg top-0 left-0 overflow-hidden absolute z-10
+}
+
+.skeleton::after{
+    content : "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height : 100%;
+    width: 100%;
+    z-index : 0;
+    background-image: linear-gradient(to right, #f3f4f6, #f5f6f8, #f8f8fa, #fafafb, #fcfcfd, #fcfcfd, #fcfcfd, #fcfcfd, #fafafb, #f8f8fa, #f5f6f8, #f3f4f6);
+    animation: 1.2s skeletonLtr infinite;
+}
+
+@keyframes skeletonLtr {
+    0%{left : -110%}
+    100% {left :110%}
+}
+
+.input-not-allowed label,
+.input-not-allowed input{
+    cursor : not-allowed;
+}
+
+.sidebar.router-link-active,
+.sidebar.router-link-active p,
+.sidebar.router-link-active svg{
+    @apply text-green-400 bg-green-100;
+}
+
+.sidebar,
+.sidebar p,
+.sidebar svg{
+    @apply hover:bg-green-100 hover:text-green-400;
+}
+
+.swiper-wrapper{
+    @apply flex flex-row;
+}
+
+.btn-white{
+    @apply hover:bg-gray-200 ease-in-out border-2 border-white  text-sm h-12 px-5 rounded-lg min-w-fit m-1 bg-white text-green-400;
+}
+
+.btn-white-line{
+    @apply bg-transparent hover:bg-white border-white hover:border-white text-white hover:text-green-400 border-2 ease-in-out  text-sm h-12 px-5 rounded-lg min-w-fit m-1 
+}
+
+.btn-green{
+    @apply hover:bg-green-600 ease-in-out border-2 border-green-400  text-sm h-12 px-5 rounded-lg min-w-fit m-1 bg-green-400 text-white;
+}
+
+.btn-green-line{
+    @apply bg-white hover:bg-green-600 border-green-500 hover:border-green-600 text-green-500 hover:text-white border-2 ease-in-out  text-sm h-12 px-5 rounded-lg min-w-fit m-1 
+}
+
+.btn-blue{
+    @apply bg-blue-200 hover:bg-blue-600 ease-in-out text-white text-sm h-12 px-5 rounded-lg min-w-fit m-1
+}
+
+.btn-blue-line{
+    @apply hover:bg-blue-400 ease-in-out border-2 border-blue-400 text-blue-400 hover:text-white  text-sm h-12 px-5 rounded-lg min-w-fit m-1 
+}
+
+.btn-red{
+    @apply bg-red-200 hover:bg-red-600 ease-in-out text-red-600 hover:text-white text-sm h-12 px-5 rounded-lg min-w-fit m-1
+}
+
+.btn-red-line{
+    @apply hover:bg-red-400 ease-in-out border-2 border-red-400 text-red-400 hover:text-white  text-sm h-12 px-5 rounded-lg min-w-fit m-1 
+}
+
+.btn-gray{
+    @apply bg-gray-300 hover:bg-gray-600 ease-in-out text-gray-600 hover:text-white text-sm h-12 px-5 rounded-lg min-w-fit m-1
+}
+
+.btn-gray-line{
+    @apply hover:bg-gray-600 ease-in-out border-2 border-gray-600 text-gray-600 hover:text-white  text-sm h-12 px-5 rounded-lg min-w-fit m-1 
+}
+
+.btn-disable{
+    @apply bg-gray-300 ease-in-out border-2 border-gray-400 text-gray-400  text-sm h-12 px-5 rounded-lg min-w-fit m-1 cursor-not-allowed
+}
+
+.form-input{
+    @apply h-auto py-2 px-6 my-4 border-2 rounded-lg relative overflow-hidden
+}
+
+.form-disable{
+    @apply bg-gray-200 cursor-not-allowed
+}
+
+.form-disable input,
+.form-disable label{
+    @apply cursor-not-allowed
+}
+
+.form-input .form-label{
+    @apply text-xs text-gray-400 block
+}
+
+.form-input .form-input-wrapper{
+    @apply flex justify-between flex-row
+}
+
+.form-input .form-input-wrapper.input-radio{
+    @apply h-14 items-center justify-start
+}
+
+.form-input.active{
+    @apply border-green-400 text-green-400
+}
+
+.form-input .form-input-wrapper.input-radio input{
+    display : none;
+}
+
+.form-input .form-input-wrapper.input-radio label{
+    @apply w-full absolute left-0 top-0 h-full cursor-pointer flex items-center pl-14 text-gray-400 text-sm
+}
+
+.form-input .form-input-wrapper.input-radio label::before {
+    content: "";
+    @apply w-5 h-5 absolute left-5 rounded-full bg-gray-400
+}
+
+.form-input.active .form-input-wrapper.input-radio label{
+    @apply text-green-400
+}
+.form-input.active .form-input-wrapper.input-radio label::before {
+    content: "";
+    @apply w-5 h-5 absolute left-5 rounded-full bg-green-400
+}
+
+.form-input .form-input-wrapper .input-text {
+    @apply bg-transparent text-sm h-8 w-full text-gray-600 focus:outline-none tracking-wider placeholder:text-gray-300
+}
+
+.table-keuangan{
+    @apply mb-10
+}
+
+.table-keuangan .th-keuangan,
+.table-keuangan .tr-keuangan{
+    @apply table-row cursor-pointer hover:bg-white transition-all
+}
+
+.table-keuangan .th-keuangan .td-keuangan,
+.table-keuangan .tr-keuangan .td-keuangan{
+    @apply table-cell p-2 text-gray-600 text-sm
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-200 rounded-lg w-2
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-green-300 rounded-full cursor-pointer
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-green-400
+}
